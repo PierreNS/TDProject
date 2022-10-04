@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &281326311516970434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4215552822257994117}
+  m_Layer: 8
+  m_Name: BarrelEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4215552822257994117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281326311516970434}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.015, z: 0.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9095944398282397522}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1331569905210547391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983230682749374187}
+  m_Layer: 8
+  m_Name: RaycastSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &983230682749374187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331569905210547391}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.035, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9095944398282397522}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9095944396745554734
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,8 +72,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9095944396745554735}
   - component: {fileID: -1535553026303610251}
-  - component: {fileID: -4245240408293582732}
-  m_Layer: 0
+  - component: {fileID: 7583836492202486747}
+  - component: {fileID: 6688988463521953985}
+  m_Layer: 8
   m_Name: LightTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +110,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5169208, y: 1.3963059, z: 1.5513822}
   m_Center: {x: 0, y: 0.5686129, z: 0.000000059604645}
---- !u!114 &-4245240408293582732
+--- !u!114 &7583836492202486747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,12 +119,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 9095944396745554734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa95ab79b0e520f448a35773877ca0d8, type: 3}
+  m_Script: {fileID: 11500000, guid: af075883deed91547ba00db64744b530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Cost>k__BackingField: 0
   <HitPoints>k__BackingField: 0
   <MaxHitPoints>k__BackingField: 0
+  _enemiesMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  _wallMask:
+    serializedVersion: 2
+    m_Bits: 1536
+  _attackRange: 10
+  _attackSpeed: 1
+  _attackDamage: 10
+  _rotationSpeed: 10
+  _attackAngle: 90
+  _attackDivider: 2
+  _raycastSource: {fileID: 983230682749374187}
+  _turretHousing: {fileID: 9095944398282397522}
+  _barrels:
+  - {fileID: 4215552822257994117}
+--- !u!208 &6688988463521953985
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095944396745554734}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.75, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.75, z: 0}
+  m_TimeToStationary: 0.2
 --- !u!1 &9095944396932819160
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +168,7 @@ GameObject:
   - component: {fileID: 9095944396932819161}
   - component: {fileID: 9095944396932819163}
   - component: {fileID: 9095944396932819162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +251,7 @@ GameObject:
   - component: {fileID: 9095944396955338933}
   - component: {fileID: 9095944396955338935}
   - component: {fileID: 9095944396955338934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +334,7 @@ GameObject:
   - component: {fileID: 9095944397227688848}
   - component: {fileID: 9095944397227688851}
   - component: {fileID: 9095944397227688850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9095944397891537249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9095944398282397522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,6 +470,8 @@ Transform:
   - {fileID: 9095944397227688848}
   - {fileID: 9095944398566823712}
   - {fileID: 9095944396955338933}
+  - {fileID: 983230682749374187}
+  - {fileID: 4215552822257994117}
   m_Father: {fileID: 9095944397891537249}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -389,7 +486,7 @@ GameObject:
   - component: {fileID: 9095944398566823712}
   - component: {fileID: 9095944398566823714}
   - component: {fileID: 9095944398566823713}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Housing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
