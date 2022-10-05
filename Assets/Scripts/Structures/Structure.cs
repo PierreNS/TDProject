@@ -15,9 +15,13 @@ public class Structure : MonoBehaviour, IDamageable
     {
         HitPoints = MaxHitPoints;
     }
+
     public void TakeDamage(int damage)
     {
         HitPoints -= damage;
+
+        var lerpVal = Mathf.InverseLerp(0, MaxHitPoints, HitPoints);
+        UIManager.Instance.SetBaseHitpoints(lerpVal);
 
         if (HitPoints <= 0)
         {

@@ -49,6 +49,8 @@ public class PlayerConstruction : MonoBehaviour
             _structureIndex = 2;
             UpdateStructurePreview(true);
         }
+
+        UpdateUI(_structureIndex);
     }
 
     private void HandlePreview()
@@ -104,5 +106,10 @@ public class PlayerConstruction : MonoBehaviour
             return hit.point;
         }
         return Vector3.zero;
+    }
+
+    private void UpdateUI(int index) 
+    {
+        UIManager.Instance.ChangeSelectedStructure(index);
     }
 }

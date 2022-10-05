@@ -10,11 +10,13 @@ public class PlayerResources : MonoBehaviour
     private void Start()
     {
         Credits = StartCredits;
+        UpdateUI();
     }
 
     public void AddCredits(int amount)
     {
         Credits += amount;
+        UpdateUI();
     }
 
     public bool SubtractCredits(int amount)
@@ -22,8 +24,14 @@ public class PlayerResources : MonoBehaviour
         if (Credits >= amount)
         {
             Credits -= amount;
+            UpdateUI();
             return true;
         }
         return false;
+    }
+
+    private void UpdateUI() 
+    {
+        UIManager.Instance.SetResources(Credits);
     }
 }

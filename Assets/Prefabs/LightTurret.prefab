@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af075883deed91547ba00db64744b530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Cost>k__BackingField: 0
+  <Cost>k__BackingField: 250
   <HitPoints>k__BackingField: 0
   <MaxHitPoints>k__BackingField: 0
   _enemiesMask:

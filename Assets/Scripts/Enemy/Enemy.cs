@@ -12,6 +12,7 @@ namespace Assets.Scripts.Enemy
         private Transform _target;
         private EnemyMovement _enemyMovement;
         private EnemyHitpoints _enemyHitpoints;
+        private EnemyCombat _enemyCombat;
 
         private void Awake()
         {
@@ -19,11 +20,13 @@ namespace Assets.Scripts.Enemy
             
             _enemyMovement = GetComponent<EnemyMovement>();
             _enemyHitpoints = GetComponent<EnemyHitpoints>();
+            _enemyCombat = GetComponent<EnemyCombat>();
         }
 
         private void Start()
         {
             _enemyMovement.SetEnemyTarget(_target);
+            _enemyCombat.SetTarget(_target);
         }
     }
 }
